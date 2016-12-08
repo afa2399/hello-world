@@ -1,0 +1,5 @@
+//Window
+size(600, 600);
+
+//Pacman Shape
+arc(300, 300, 300, 300, radians(
