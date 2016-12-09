@@ -1,5 +1,9 @@
-//Window
-size(600, 600);
-
-//Pacman Shape
-arc(300, 300, 300, 300, radians(
+size(600,600);
+strokeWeight(5);
+strokeCap(ROUND);
+fill(225, 225, 0);
+arc(300, 300, 200, 200, QUARTER_PI, PI + QUARTER_PI + QUARTER_PI +QUARTER_PI);
+line(300, 300, 300 + 70.7106781187, 300- 70.7106781187);
+line(300, 300, 300 + 70.7106781187, 300 + 70.7106781187);
+fill(0);
+ellipse(300, 250, 20, 20);
