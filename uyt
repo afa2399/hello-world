@@ -1,0 +1,29 @@
+size(120,120); 
+strokeWeight(3);
+//1
+beginShape();
+vertex(20, 30);
+vertex(50, 50);
+vertex(20, 60);
+endShape();
+
+//2
+beginShape();
+vertex(20,70);
+vertex(55,55);
+vertex(40, 100);
+endShape();
+
+//3
+beginShape();
+vertex(55, 100);
+vertex(65, 60);
+vertex(75, 100);
+endShape();
+
+//4
+beginShape();
+vertex(100, 80);
+vertex(70, 55);
+vertex(100, 50);
+endShape();
