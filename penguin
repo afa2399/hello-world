@@ -1,0 +1,28 @@
+size(400,600);
+
+//background
+background(255);
+
+//body
+fill(16, 2, 157);
+ellipse(200, 300, 200, 300);
+
+//face
+fill(255,255,255);
+ellipse(200, 230, 100, 100);
+
+//eye1
+fill(0);
+ellipse(175, 220, 10, 10);
+
+//eye2
+fill(0);
+ellipse(225, 220, 10, 10);
+
+//beak
+fill(255, 128, 23);
+beginShape();
+vertex(190, 240);
+vertex(200, 250);
+vertex(210, 240);
+endShape();
