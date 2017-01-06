@@ -27,3 +27,17 @@ vertex(100, 80);
 vertex(70, 55);
 vertex(100, 50);
 endShape();
+
+//5
+beginShape();
+vertex(95, 40);
+vertex(70,45);
+vertex(70, 30);
+endShape();
+
+//6
+beginShape();
+vertex(40,35);
+vertex(60, 50);
+vertex(60, 30);
+endShape();
