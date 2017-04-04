@@ -1,46 +1,67 @@
-size(400,600);
+float x = 200;
 
+
+void setup() {
+size(400,600);
+smooth();
+}
+void draw() {
 //background
-background(255);
+if (keyPressed) {
+  if (key == 'b')
+  background(#F50CD6);
+} else {
+  background(255);
+}
+
+if (keyPressed && (key == CODED)) { 
+if (keyCode == LEFT) { 
+x--;
+} else if (keyCode == RIGHT) { 
+x++;
+}
+}
 
 //body
 fill(16, 2, 157);
 strokeWeight(4);
-ellipse(200, 300, 200, 300);
+ellipse(x, 300, 200, 300);
 
 //face
 fill(255,255,255);
-ellipse(200, 230, 100, 100);
+ellipse(x, 230, 100, 100);
 
 //eye1
 fill(0);
-ellipse(175, 220, 10, 10);
+ellipse(x-25, 220, 10, 10);
 
 //eye2
 fill(0);
-ellipse(225, 220, 10, 10);
+ellipse(x+25, 220, 10, 10);
 
 //beak
 strokeWeight(2);
 fill(255, 128, 23);
 beginShape();
-vertex(190, 240);
-vertex(200, 250);
-vertex(210, 240);
+vertex(x-10, 240);
+vertex(x, 250);
+vertex(x+10, 240);
 endShape();
 
 //wings
 strokeWeight(5);
-line(280, 380, 250, 310);
-line(120, 380, 150, 310);
+line(x+80, 380, x+50, 310);
+line(x-80, 380, x-50, 310);
 
 //hat
 fill(255, 0, 0);
 beginShape();
-vertex(100, 180);
-vertex(130, 130);
-vertex(200, 150);
-vertex(270, 130);
-vertex(300, 180);
-vertex(100, 180);
+vertex(x-100, 180);
+vertex(x-70, 130);
+vertex(x, 150);
+vertex(x+70, 130);
+vertex(x+100, 180);
+vertex(x-100, 180);
 endShape();
+}
+
