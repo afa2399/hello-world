@@ -1,4 +1,5 @@
 float x = 200;
+float y = 300;
 
 
 void setup() {
@@ -6,62 +7,77 @@ size(400,600);
 smooth();
 }
 void draw() {
-//background
-if (keyPressed) {
-  if (key == 'b')
-  background(#F50CD6);
-} else {
   background(255);
-}
+  if (keyPressed && key == 'b')
+  background(#F50CD6);
+  if (keyPressed && key == 'v')
+  background(#07EDEB);
+    if (keyPressed && key == 'c')
+  background(#4DFF08);
+    if (keyPressed && key == 'x')
+  background(#FFF700);
+  
+    
 
-if (keyPressed && (key == CODED)) { 
-if (keyCode == LEFT) { 
-x--;
-} else if (keyCode == RIGHT) { 
-x++;
-}
+  if (keyPressed && (key == CODED)) { 
+  if (keyCode == LEFT) { 
+  x--;
+  }  else if (keyCode == RIGHT) { 
+  x++;
+  }
+   
+  else if (keyCode == UP) { 
+  y--;
+  } else if (keyCode == DOWN) { 
+  y++;
+  }
+  
+
+
 }
 
 //body
 fill(16, 2, 157);
 strokeWeight(4);
-ellipse(x, 300, 200, 300);
+ellipse(x, y, 200, 300);
 
 //face
 fill(255,255,255);
-ellipse(x, 230, 100, 100);
+ellipse(x, y-70, 100, 100);
 
 //eye1
 fill(0);
-ellipse(x-25, 220, 10, 10);
+ellipse(x-25, y-80, 10, 10);
 
 //eye2
 fill(0);
-ellipse(x+25, 220, 10, 10);
+ellipse(x+25, y-80, 10, 10);
 
 //beak
 strokeWeight(2);
 fill(255, 128, 23);
 beginShape();
-vertex(x-10, 240);
-vertex(x, 250);
-vertex(x+10, 240);
+vertex(x-10, y-60);
+vertex(x, y-50);
+vertex(x+10, y-60);
 endShape();
 
 //wings
 strokeWeight(5);
-line(x+80, 380, x+50, 310);
-line(x-80, 380, x-50, 310);
+line(x+80, y+80, x+50, y+10);
+line(x-80, y+80, x-50, y+10);
 
 //hat
 fill(255, 0, 0);
 beginShape();
-vertex(x-100, 180);
-vertex(x-70, 130);
-vertex(x, 150);
-vertex(x+70, 130);
-vertex(x+100, 180);
-vertex(x-100, 180);
+vertex(x-100, y-120);
+vertex(x-70, y-170);
+vertex(x, y-150);
+vertex(x+70, y-170);
+vertex(x+100, y-120);
+vertex(x-100, y-120);
 endShape();
-}
+  }
+
+
 
