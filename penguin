@@ -1,7 +1,7 @@
 float x = 200;
 float y = 300;
-float mx = 200;
-float my = 300;
+float mx = constrain(x, 150, 160);
+float my = constrain(y, 250, 300);
 
 
 void setup() {
@@ -34,7 +34,8 @@ void draw() {
   y++;
   }
   }
- if (abs(mouseX - mx) > 0.1) {
+ if (abs(mouseX - 
+ mx) > 0.1) {
     mx = mx + (mouseX - mx);
   }
   if (abs(mouseY - my) > 0.1) {
@@ -51,6 +52,9 @@ ellipse(x, y, 200, 300);
 //face
 fill(255,255,255);
 ellipse(x, y-70, 100, 100);
+
+mx = constrain(mouseX, 180, 220);
+my = constrain(mouseY, 280, 310);
 
 //eye1
 fill(0);
