@@ -53,8 +53,8 @@ ellipse(x, y, 200, 300);
 fill(255,255,255);
 ellipse(x, y-70, 100, 100);
 
-mx = constrain(mouseX, 180, 220);
-my = constrain(mouseY, 280, 310);
+mx = constrain(mouseX, x-20, x+20);
+my = constrain(mouseY, y-20, y+20);
 
 //eye1
 fill(0);
