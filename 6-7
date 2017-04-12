@@ -1,0 +1,18 @@
+PFont font;
+void setup() {
+size(480, 120);
+smooth();
+}
+void draw() {
+background(0);
+font = loadFont("Calibri-48.vlw");
+textFont(font);
+textSize(36);
+fill(#FF0000);
+text("Anthony", 25, 60);
+font = loadFont("ArialNarrow-Italic-48.vlw");
+textFont(font);
+textSize(18);
+fill(#0000FF);
+text("Ambrose", 27, 90);
+}
