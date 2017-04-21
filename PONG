@@ -1,0 +1,41 @@
+float ballX = 20;
+float ballY = 20;
+float dX = random(3, 4);
+float dY = random(3, 4);
+float paddleX;
+float paddleY;
+
+void setup() {
+  size(400, 400);
+  paddleX = width - 15;
+}
+ 
+void draw() {
+  
+  paddleY = mouseY;
+  
+  background(0, 255, 0);
+  
+  ellipse(ballX, ballY, 20, 20);
+  
+  rect(paddleX, paddleY, 10, 50);
+  
+  if (ballX > width) {
+    dX= -dX;
+  }
+  
+  if (ballX < 0) {
+    dX = -dX;
+  }
+  
+  if (ballY > height) {
+    dY= -dY;
+  }
+  
+  if (ballY < 0) {
+    dY= -dX;
+  }
+  
+  ballX = ballX + dX;
+  ballY = ballY + dY;
+}
