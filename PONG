@@ -1,5 +1,6 @@
 float ballX = 20;
 float ballY = 20;
+float ballR = 10;
 float dX = random(3, 4);
 float dY = random(3, 4);
 float paddleX;
@@ -13,15 +14,19 @@ void setup() {
  
 void draw() {
   
+  if (ballX > width) {
+    fill(#000000);
+    rect(0, 0, width, height);
+  }
   paddleY = mouseY;
   
   background(0, 255, 0);
   
-  ellipse(ballX, ballY, 20, 20);
+  ellipse(ballX, ballY, 2 * ballR, 2 * ballR);
   
   rect(paddleX, paddleY, 10, paddleH);
   
-  if ((ballX > paddleX) && (ballY>= paddleY) && (ballY <= paddleY + paddleH)) {
+  if ((ballX >= paddleX) && (ballY>= paddleY) && (ballY <= paddleY + paddleH)) {
     dX= -dX;
   }
   
@@ -29,14 +34,15 @@ void draw() {
     dX = -dX;
   }
   
-  if (ballY > height) {
+  if (ballY >= height) {
     dY= -dY;
   }
   
   if (ballY < 0) {
-    dY= -dX;
+    dY= -dY;
   }
   
   ballX = ballX + dX;
   ballY = ballY + dY;
 }
+
