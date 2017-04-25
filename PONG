@@ -7,20 +7,29 @@ float paddleX;
 float paddleY;
 float paddleH = 50;
 
+
 void setup() {
   size(400, 400);
   paddleX = width - 15;
 }
  
 void draw() {
+  int timer = millis();
   
-  if (ballX > width) {
-    fill(#000000);
-    rect(0, 0, width, height);
-  }
+   background(#03B9FF);
+   
+  fill(255);
+  text(timer/1000, 30, 30);
+  
   paddleY = mouseY;
   
-  background(0, 255, 0);
+   if (ballX > width) {
+     textSize(32);
+     textAlign(CENTER);
+     fill(255);
+     text("GAME OVER", 200, 200);
+    paddleY = 0;
+  }
   
   ellipse(ballX, ballY, 2 * ballR, 2 * ballR);
   
@@ -45,4 +54,3 @@ void draw() {
   ballX = ballX + dX;
   ballY = ballY + dY;
 }
-
