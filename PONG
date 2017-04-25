@@ -19,16 +19,14 @@ void draw() {
    background(#03B9FF);
    
   fill(255);
-  text(timer/1000, 30, 30);
+  textSize(32);
+  text(timer/1000, 15, 35);
   
   paddleY = mouseY;
   
    if (ballX > width) {
-     textSize(32);
-     textAlign(CENTER);
-     fill(255);
-     text("GAME OVER", 200, 200);
-    paddleY = 0;
+     GameOver();
+    paddleY = -900;
   }
   
   ellipse(ballX, ballY, 2 * ballR, 2 * ballR);
@@ -53,4 +51,14 @@ void draw() {
   
   ballX = ballX + dX;
   ballY = ballY + dY;
+}
+
+void GameOver() {
+     clear();
+     background(#03B9FF);
+     fill(255);
+     textSize(32);
+     textAlign(CENTER);
+     fill(255);
+     text("GAME OVER", 200, 200);
 }
