@@ -6,7 +6,9 @@ float dY = random(3, 4);
 float paddleX;
 float paddleY;
 float paddleH = 50;
+int score = 0;
 
+boolean change = false;
 
 void setup() {
   size(400, 400);
@@ -16,11 +18,20 @@ void setup() {
 void draw() {
   int timer = millis();
   
-   background(#03B9FF);
+  if(keyPressed)
+  {
+    change = !change;
+  }
+  
+  if(change)
+  background(#E503FF);
+  else
+  background(#03B9FF);
    
   fill(255);
   textSize(32);
   text(timer/1000, 15, 35);
+  text(score, 350, 35);
   
   paddleY = mouseY;
   
@@ -37,8 +48,9 @@ void draw() {
     dX= -dX;
   }
   
-  if (ballX < 0) {
+  if (ballX <= 0) {
     dX = -dX;
+    score +=1;
   }
   
   if (ballY >= height) {
